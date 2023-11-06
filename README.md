@@ -1,59 +1,98 @@
-# Cat-Dog Image Classification with Deep Learning
+# CAT & DOG IMAGE CLASSIFICATION 
 
 This project is an implementation of an image classification model that can distinguish between cats and dogs. The model is built using deep learning techniques and utilizes the MobileNetV2 architecture for feature extraction. In this README, we will cover various aspects of the project, including the model architecture, data preprocessing, training process, and usage.
 
-Table of Contents
-Project Overview
-Model Architecture
-Data Preprocessing
-Training Process
-Usage
-Results
-Contributing
-License
+## Table of Contents
 
-# Project Overview
+1. Project Overview
+2. Prerequisites
+3. Data Preparation
+4. Model Architecture
+5. Training
+6. Model Performance
+7. Usage
+8. Contributing
+
+## 1. Project Overview
 The goal of this project is to create a machine learning model that can classify images as either cats or dogs. Image classification is a fundamental task in computer vision, and this project demonstrates the use of transfer learning, data augmentation, and model checkpointing to achieve accurate results.
 
-#Model Architecture
+## 2. Prerequisites
+Before running the code, make sure you have the following prerequisites:
+
+- Python version: 3.10.12 
+- TensorFlow version: 2.14.0
+- Keras version: 2.14.0
+- Matplotlib version: 3.7.1
+- NumPy version: 1.23.5
+- Scikit-Learn version: 1.2.2
+
+## 3. Data Preparation
+Data for this project is loaded from CSV files containing image data and labels. Labels are encoded as 0 for 'dog' and 1 for 'cat'. The following files are required:
+
+1. input.csv: Contains image data for training.
+2. labels.csv: Contains corresponding labels for training.
+3. input_test.csv: Contains image data for testing.
+4. labels_test.csv: Contains corresponding labels for testing.
+
+## 4. Model Architecture
 We use the MobileNetV2 architecture as the backbone for our model. MobileNetV2 is a lightweight and efficient convolutional neural network architecture that has been pre-trained on a large dataset. We fine-tune this architecture for our binary classification task.
 
 The custom top layers added to MobileNetV2 include:
 
-Global Average Pooling
-A fully connected layer with 64 units and ReLU activation
-The final output layer with a single unit and sigmoid activation for binary classification
+- Global Average Pooling
+- A fully connected layer with 64 units and ReLU activation
+- The final output layer with a single unit and sigmoid activation for binary classification
+
 The model is compiled with the Adam optimizer and binary cross-entropy loss function.
 
-Data Preprocessing
-Data for this project is loaded from CSV files containing image data and labels.
-Images are reshaped to a consistent size of 100x100 pixels with 3 color channels.
-Labels are encoded as 0 for 'dog' and 1 for 'cat'.
-An ImageDataGenerator is used for data augmentation, which includes rotation, width and height shifting, shearing, zooming, and horizontal flipping.
-Training Process
-The model is trained over 5 epochs with a batch size of 32. Model weights are saved at each epoch using a ModelCheckpoint callback. The training process includes data augmentation, which helps the model generalize better to unseen data.
+## 5. Training
+Our model is trained using the fit method with data augmentation. We save the best model weights using the ModelCheckpoint callback, which continuously monitors training loss to ensure that the best weights are saved.
 
-Usage
+Parameters for Training
+- Batch size: 32
+- Number of epochs: 5
+
+## 6. Model Performance
+After training, the model is evaluated on the test data to assess its performance. The performance analysis of the modle is as follows : 
+
+*NOTE - Labels are encoded as 0 for 'dog' and 1 for 'cat'.*
+
+### 6.1 Performance during Training
+| | Precision | Recall | F1-Score | Support |
+| -------- | -------- | -------- | -------- | -------- |
+| 0 | 0.95 | 0.80 | 0.87 | 1000 |
+| 1 | 0.83 | 0.95 | 0.89 | 1000 |
+| Accuracy | | | 0.88 | 2000 |
+| Macro Avg | 0.89 | 0.88 | 0.88 | 2000 |
+| Weighted Avg | 0.89 | 0.88 | 0.88 | 2000 |
+
+### 6.2 Performance on Test Data
+| | Precision | Recall | F1-Score | Support |
+| ------------ | ------------ | ------------ | ------------ | ------------ |
+| 0 | 0.92 | 0.73 | 0.82 | 200 |
+| 1 | 0.78 | 0.94 | 0.85 | 200 |
+| Accuracy | | | 0.84 | 400 |
+| Macro Avg | 0.85 | 0.84 | 0.84 | 400 |
+| Weighted Avg | 0.85 | 0.84 | 0.84 | 400 |
+
+
+## 7. Usage
 To train the model and evaluate it, you can follow these steps:
 
-Prepare your data in CSV format, including training and testing datasets.
-Load and preprocess your data as shown in the code.
-Run the model training code provided in the script.
-The trained model will be saved as a checkpoint file.
-Evaluate the model on your testing dataset to assess its performance.
-You can also use the model for making predictions on new images, as demonstrated in the code. Simply load the saved model checkpoint and use it to classify new images.
-
-Results
-After training the model, you can evaluate its performance using the testing dataset. The test loss and accuracy are displayed in the console. Additionally, you can use the model to make predictions on new images.
-
-Here is an example of how to make predictions using the model:
-
-python
-Copy code
+1. Prepare your data in CSV format, including training and testing datasets.
+2. Load and preprocess your data as shown in the code.
+3. Run the model training code provided in the script.
+4. The trained model will be saved as a checkpoint file.
+5. Evaluate the model on your testing dataset to assess its performance.
+   
+We can also use the model for making predictions on new images. Simply load the saved model checkpoint and use it to classify new images. Here is an example of how to make predictions using the model:
+<pre>
+# python code
+    
 # Load the model
 from tensorflow.keras.models import load_model
 
-model = load_model("your_checkpoint_directory/checkpoint.h5")
+model = load_model("Model_Checkpoint.h5")
 
 # Make predictions on a test image
 y_pred = model.predict(new_image.reshape(1, 100, 100, 3))
@@ -65,11 +104,12 @@ else:
     pred = 'cat'
 
 print("Our model says it is a:", pred)
-Contributing
+</pre>
+
+
+## 8. Contributing
 We welcome contributions to this project. If you have suggestions for improvements, bug reports, or want to extend the functionality, please feel free to open an issue or submit a pull request.
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 Thank you for considering this project as a demonstration of my skills and capabilities in deep learning and computer vision. If you have any questions or would like to see a live demonstration, please don't hesitate to contact me.
 
