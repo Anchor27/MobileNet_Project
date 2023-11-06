@@ -92,6 +92,7 @@ To train the model and evaluate it, you can follow these steps:
 5. Evaluate the model on your testing dataset to assess its performance.
    
 We can also use the model for making predictions on new images. Simply load the saved model checkpoint and use it to classify new images. Here is an example of how to make predictions using the model:
+
 <pre>
 # python code
     
@@ -112,6 +113,7 @@ else:
 print("Our model says it is a:", pred)
 </pre>
 
+*NOTE: Please find the Classification_Model.h5 file in the repository files*
 
 ## 8. Contributing
 We welcome contributions to this project. If you have suggestions for improvements, bug reports, or want to extend the functionality, please feel free to open an issue or submit a pull request.
