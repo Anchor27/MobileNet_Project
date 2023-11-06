@@ -1,10 +1,12 @@
 # CAT - DOG IMAGE CLASSIFICATION 
 
+### Google Collab Notebook Link: https://colab.research.google.com/drive/1cvDlFJLnb0w25jUcsOWzaI4XWciRH6Kn?usp=sharing
+
 This project is an implementation of an image classification model that can distinguish between cats and dogs. The model is built using deep learning techniques and utilizes the MobileNetV2 architecture for feature extraction. In this README, we will cover various aspects of the project, including the model architecture, data preprocessing, training process, and usage.
 
 ## Table of Contents
 
-1. Project Overview
+1. Introduction
 2. Prerequisites
 3. Data Preparation
 4. Model Architecture
@@ -13,8 +15,9 @@ This project is an implementation of an image classification model that can dist
 7. Usage
 8. Contributing
 
-## 1. Project Overview
+## 1. Introduction
 The goal of this project is to create a machine learning model that can classify images as either cats or dogs. Image classification is a fundamental task in computer vision, and this project demonstrates the use of transfer learning, data augmentation, and model checkpointing to achieve accurate results.
+
 
 ## 2. Prerequisites
 Before running the code, make sure you have the following prerequisites:
