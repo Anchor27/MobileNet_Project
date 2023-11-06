@@ -55,26 +55,29 @@ Parameters for Training
 ## 6. Model Performance
 After training, the model is evaluated on the test data to assess its performance. The performance analysis of the modle is as follows : 
 
-*NOTE - Labels are encoded as 0 for 'dog' and 1 for 'cat'.*
 
 ### 6.1 Performance during Training
-| | Precision | Recall | F1-Score | Support |
-| -------- | -------- | -------- | -------- | -------- |
-| 0 | 0.95 | 0.80 | 0.87 | 1000 |
-| 1 | 0.83 | 0.95 | 0.89 | 1000 |
-| Accuracy | | | 0.88 | 2000 |
-| Macro Avg | 0.89 | 0.88 | 0.88 | 2000 |
-| Weighted Avg | 0.89 | 0.88 | 0.88 | 2000 |
+| Epoch Number | Loss | Accuracy | 
+| -------- | -------- | -------- |
+| 1 | 0.4169 | 0.8005 | 
+| 2 | 0.2586 | 0.8890 | 
+| 3 | 0.2143 | 0.9050 | 
+| 4 | 0.1827 | 0.9195 |
+| 5 | 0.1604 | 0.9405 |
+
+
 
 ### 6.2 Performance on Test Data
 | | Precision | Recall | F1-Score | Support |
 | ------------ | ------------ | ------------ | ------------ | ------------ |
-| 0 | 0.92 | 0.73 | 0.82 | 200 |
-| 1 | 0.78 | 0.94 | 0.85 | 200 |
-| Accuracy | | | 0.84 | 400 |
-| Macro Avg | 0.85 | 0.84 | 0.84 | 400 |
-| Weighted Avg | 0.85 | 0.84 | 0.84 | 400 |
+| 0 | 0.89 | 0.73 | 0.81 | 200 |
+| 1 | 0.82 | 0.94 | 0.90 | 200 |
+| Accuracy | | | 0.85 | 400 |
+| Macro Avg | 0.86 | 0.85 | 0.85 | 400 |
+| Weighted Avg | 0.86 | 0.85 | 0.85 | 400 |
 
+
+*NOTE - Labels are encoded as 0 for 'dog' and 1 for 'cat'.*
 
 ## 7. Usage
 To train the model and evaluate it, you can follow these steps:
