@@ -1,4 +1,4 @@
-# CAT - DOG IMAGE CLASSIFICATION 
+# CAT - DOG IMAGE CLASSIFICATION PROJECT
 
 ### Google Collab Notebook Link: https://colab.research.google.com/drive/1cvDlFJLnb0w25jUcsOWzaI4XWciRH6Kn?usp=sharing
 
