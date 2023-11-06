@@ -1,4 +1,6 @@
 <pre>
+
+''' LOADING DEPENDENCIES '''
 import numpy as np
 import random
 import matplotlib.pyplot as plt
@@ -9,7 +11,10 @@ from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.callbacks import ModelCheckpoint
 
-# Load and preprocess your data as needed
+
+
+
+''' LOADING AND PREPROCESSING DATA '''
 X_train = np.loadtxt('/content/drive/MyDrive/Image Classification CNN Keras Dataset/input.csv', delimiter=',')
 Y_train = np.loadtxt('/content/drive/MyDrive/Image Classification CNN Keras Dataset/labels.csv', delimiter=',')
 X_test = np.loadtxt('/content/drive/MyDrive/Image Classification CNN Keras Dataset/input_test.csv', delimiter=',')
@@ -18,7 +23,7 @@ Y_test = np.loadtxt('/content/drive/MyDrive/Image Classification CNN Keras Datas
 X_train = X_train.reshape(-1, 100, 100, 3)
 X_test = X_test.reshape(-1, 100, 100, 3)
 
-# EncodING class labels (0 for 'dog', 1 for 'cat')
+# ENCODING CLASS LABELS (0 for 'dog', 1 for 'cat')
 Y_train = Y_train.astype(int)
 Y_test = Y_test.astype(int)
 
@@ -41,25 +46,30 @@ x = GlobalAveragePooling2D()(base_model.output)
 x = Dense(64, activation='relu')(x)
 predictions = Dense(1, activation='sigmoid')(x)
 
-# Creating the final model
+
+
+
+''' TRAINING THE MODEL '''
+# Creating the model
 model = Model(inputs=base_model.input, outputs=predictions)
-
-# Compiling the model with an appropriate optimizer and loss function
 model.compile(optimizer=Adam(learning_rate=0.0001), loss='binary_crossentropy', metrics=['accuracy'])
-
-
-# Train the model with data augmentation and save checkpoints
 batch_size = 32
 epochs = 5
+
+#Training the model
 model.fit(datagen.flow(X_train, Y_train, batch_size=batch_size), steps_per_epoch=len(X_train) / batch_size, epochs=epochs)
 
 
-# Model Evaluation
 
+
+''' MODEL EVALUATION ON TEST DATASET '''
 loss, accuracy = model.evaluate(X_test, Y_test)
 print(f'Test loss: {loss:.4f}, Test accuracy: {accuracy:.4f}')
 
 
+
+
+''' PREDICTING LABEL OF NEW IMAGE '''
 # Generating a random index for a test image
 random_idx = random.randint(0, len(Y_test) - 1)
 
@@ -75,32 +85,18 @@ if y_pred == 0:
     pred = 'dog'
 else:
     pred = 'cat'
-
+    
 print("Model Prediction:", pred)
 
-from google.colab import drive
-drive.mount('/content/drive')
 
 
-model_save_path = '/content/drive/My Drive/Cat-Dog_Image_Classification_Model/'
 
-# Save the entire model (architecture, weights, optimizer state)
-model.save(model_save_path + 'Classification_Model.h5')
-
-# If you only want to save the model's architecture and weights (not the optimizer state), you can use:
-# model.save_weights(model_save_path + 'your_model_weights.h5')
-
-
-!pip install scikit-learn
+''' MODEL PERFORMANCE REPORT ON TEST DATASET '''
 y_pred = model.predict(X_test)  
-
 from sklearn.metrics import classification_report
-
 y_pred_binary = (y_pred > 0.5).astype(int)
-
 report = classification_report(Y_test, y_pred_binary)
-
-# Print the report
 print(report)
+
 
 </pre>
