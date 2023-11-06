@@ -1,4 +1,4 @@
-# CAT & DOG IMAGE CLASSIFICATION 
+# CAT - DOG IMAGE CLASSIFICATION 
 
 This project is an implementation of an image classification model that can distinguish between cats and dogs. The model is built using deep learning techniques and utilizes the MobileNetV2 architecture for feature extraction. In this README, we will cover various aspects of the project, including the model architecture, data preprocessing, training process, and usage.
 
