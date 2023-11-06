@@ -1,3 +1,4 @@
+<pre>
 import numpy as np
 import random
 import matplotlib.pyplot as plt
@@ -102,4 +103,4 @@ report = classification_report(Y_test, y_pred_binary)
 # Print the report
 print(report)
 
-
+</pre>
