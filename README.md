@@ -98,7 +98,7 @@ We can also use the model for making predictions on new images. Simply load the 
 # Load the model
 from tensorflow.keras.models import load_model
 
-model = load_model("Model_Checkpoint.h5")
+model = load_model("Classification_Model.h5")
 
 # Make predictions on a test image
 y_pred = model.predict(new_image.reshape(1, 100, 100, 3))
