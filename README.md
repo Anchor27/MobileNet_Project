@@ -12,7 +12,7 @@ Results
 Contributing
 License
 
-#Project Overview
+# Project Overview
 The goal of this project is to create a machine learning model that can classify images as either cats or dogs. Image classification is a fundamental task in computer vision, and this project demonstrates the use of transfer learning, data augmentation, and model checkpointing to achieve accurate results.
 
 #Model Architecture
