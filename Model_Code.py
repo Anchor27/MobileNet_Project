@@ -15,10 +15,10 @@ from tensorflow.keras.callbacks import ModelCheckpoint
 
 
 ''' LOADING AND PREPROCESSING DATA '''
-X_train = np.loadtxt('input.csv', delimiter=',')
-Y_train = np.loadtxt('labels.csv', delimiter=',')
-X_test = np.loadtxt('input_test.csv', delimiter=',')
-Y_test = np.loadtxt('labels_test.csv', delimiter=',')
+X_train = np.loadtxt('datset_input.csv', delimiter=',')
+Y_train = np.loadtxt('dataset_labels.csv', delimiter=',')
+X_test = np.loadtxt('dataset_input_test.csv', delimiter=',')
+Y_test = np.loadtxt('dataset_labels_test.csv', delimiter=',')
 
 X_train = X_train.reshape(-1, 100, 100, 3)
 X_test = X_test.reshape(-1, 100, 100, 3)
