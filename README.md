@@ -113,7 +113,13 @@ else:
 print("Our model says it is a:", pred)
 </pre>
 
-*NOTE: Please find the Classification_Model.h5 file in the repository files*
+## 7. Files Structure
+The project's structure is organized as follows:
+
+- `data/`       :         Contains datasets used for training and testing the model.
+- `src/`         :        Source code and Google Collab Notebook
+- `model/`     :       Contains the trained model : Classification_Model.h5 
+- `README.md`     :       This README file
 
 ## 8. Contributing
 We welcome contributions to this project. If you have suggestions for improvements, bug reports, or want to extend the functionality, please feel free to open an issue or submit a pull request.
