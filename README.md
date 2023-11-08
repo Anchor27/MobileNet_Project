@@ -1,7 +1,5 @@
 # CAT - DOG IMAGE CLASSIFICATION PROJECT
 
-### Google Collab Notebook Link: https://colab.research.google.com/drive/1cvDlFJLnb0w25jUcsOWzaI4XWciRH6Kn?usp=sharing
-
 This project is an implementation of an image classification model that can distinguish between cats and dogs. The model is built using deep learning techniques and utilizes the MobileNetV2 architecture for feature extraction. In this README, we will cover various aspects of the project, including the model architecture, data preprocessing, training process, and usage.
 
 ## Table of Contents
@@ -116,7 +114,7 @@ print("Our model says it is a:", pred)
 ## 7. Files Structure
 The project's structure is organized as follows:
 
-- `data/`       :         Contains datasets used for training and testing the model.
+- `data/`       :         Contains datasets used for training and testing the model (in 7Zip archived format).
 - `src/`         :        Source code and Google Collab Notebook
 - `model/`     :       Contains the trained model : Classification_Model.h5 
 - `README.md`     :       This README file
