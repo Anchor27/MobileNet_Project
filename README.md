@@ -13,7 +13,8 @@ This project is an implementation of an image classification model that can dist
 5. Training
 6. Model Performance
 7. Usage
-8. Contributing
+8. Project Files' Structure
+9. Contributing
 
 ## 1. Introduction
 The goal of this project is to create a machine learning model that can classify images as either cats or dogs. Image classification is a fundamental task in computer vision, and this project demonstrates the use of transfer learning, data augmentation, and model checkpointing to achieve accurate results.
@@ -113,7 +114,7 @@ else:
 print("Our model says it is a:", pred)
 </pre>
 
-## 7. Files Structure
+## 8. Project Files' Structure
 The project's structure is organized as follows:
 
 - `data/`       :         Contains datasets used for training and testing the model (in 7Zip archived format).
@@ -121,7 +122,7 @@ The project's structure is organized as follows:
 - `model/`     :       Contains the trained model : Classification_Model.h5 
 - `README.md`     :       This README file
 
-## 8. Contributing
+## 9. Contributing
 We welcome contributions to this project. If you have suggestions for improvements, bug reports, or want to extend the functionality, please feel free to open an issue or submit a pull request.
 
 
