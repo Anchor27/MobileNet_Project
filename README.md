@@ -117,7 +117,7 @@ print("Our model says it is a:", pred)
 ## 8. Project Files' Structure
 The project's structure is organized as follows:
 
-- `data/`       :         Contains datasets used for training and testing the model (in 7Zip archived format).
+- `data/`       :         Contains datasets used for training and testing the model (in 7Zip archived format)
 - `src/`         :        Source code and Google Collab Notebook
 - `model/`     :       Contains the trained model : Classification_Model.h5 
 - `README.md`     :       This README file
