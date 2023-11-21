@@ -1,4 +1,4 @@
-# CAT - DOG IMAGE CLASSIFICATION PROJECT
+# CAT - DOG IMAGE PROJECT
 
 <img src="https://miro.medium.com/max/1838/1*oB3S5yHHhvougJkPXuc8og.gif">
 
